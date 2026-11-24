@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>風格 A｜研究手帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbf6ea;--ink:#3b3226;--muted:#8a7a63;--tape1:#f6c9b8;--tape2:#bfe0d2;--tape3:#f7e19a;--red:#d9603f;--grid:#e9dfc8}
+*{box-sizing:border-box;margin:0}
+body{background:#d9cdb5;font-family:"LXGW WenKai TC",serif;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:32px;padding:32px 0}
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-radius:6px;box-shadow:0 18px 40px #0003;padding:72px 96px;transform-origin:top center}
+.tape{position:absolute;width:150px;height:38px;opacity:.85;background:repeating-linear-gradient(45deg,#fff6 0 6px,transparent 6px 12px)}
+.tape.t1{top:22px;left:70px;background-color:var(--tape1);transform:rotate(-6deg)}
+.tape.t2{top:26px;right:90px;background-color:var(--tape2);transform:rotate(5deg)}
+.tape.t3{bottom:30px;left:46%;background-color:var(--tape3);transform:rotate(-3deg)}
+.hand{font-family:"Caveat",cursive;color:var(--red)}
+h1{font-size:52px;line-height:1.3;font-weight:700;margin-top:40px}
+h1 .hl{background:linear-gradient(transparent 58%,var(--tape3) 58%)}
+.en{font-size:22px;color:var(--muted);margin-top:18px;max-width:900px;line-height:1.5}
+.note{position:absolute;right:110px;bottom:120px;width:290px;background:#fff8c6;padding:22px 24px;font-size:21px;line-height:1.6;transform:rotate(3deg);box-shadow:0 8px 18px #0002}
+.note::before{content:"";position:absolute;top:-14px;left:50%;width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:inset -3px -3px 0 #0002;transform:translateX(-50%)}
+.sticker{position:absolute;filter:drop-shadow(0 4px 0 #fff) drop-shadow(0 -4px 0 #fff) drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff) drop-shadow(0 6px 10px #0003)}
+.flags{display:flex;gap:14px;margin-top:34px}
+.flag{width:74px;height:48px;border-radius:6px;transform:rotate(-4deg);box-shadow:0 0 0 4px #fff,0 6px 12px #0003}
+.flag:nth-child(2){transform:rotate(3deg)}.flag:nth-child(3){transform:rotate(-1deg)}
+.de{background:linear-gradient(#222 0 33%,#dd0000 33% 66%,#ffce00 66%)}
+.nl{background:linear-gradient(#ae1c28 0 33%,#fff 33% 66%,#21468b 66%)}
+.dk{background:linear-gradient(90deg,transparent 0 28%,#fff 28% 40%,transparent 40%),linear-gradient(transparent 0 40%,#fff 40% 58%,transparent 58%),#c8102e}
+h2{font-size:40px;font-weight:700;display:inline-block;padding:4px 14px;background:var(--tape2);transform:rotate(-1deg)}
+.formula{margin-top:34px;font-size:25px;white-space:nowrap;background:#fff;border:2px dashed var(--muted);border-radius:14px;padding:22px 28px;display:inline-block}
+.formula b{color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.card{background:#fff;padding:18px 22px;border-radius:10px;box-shadow:0 6px 14px #0001;font-size:22px;line-height:1.5;position:relative}
+.card:nth-child(odd){transform:rotate(-1.2deg)}.card:nth-child(even){transform:rotate(1deg)}
+.card .k{font-size:26px;font-weight:700;color:var(--red)}
+cite{position:absolute;left:96px;bottom:34px;font-style:normal;font-size:16px;color:var(--muted)}
+.tag{position:absolute;top:40px;right:110px;font-size:30px}
+</style></head><body>
+
+<section class="slide">
+  <div class="tape t1"></div><div class="tape t2"></div>
+  <div class="hand" style="font-size:34px">Research notebook · 2026</div>
+  <h1>AI 採納會讓經濟成長<br><span class="hl">在每個國家都一樣嗎？</span></h1>
+  <p class="en">The Impact of Artificial Intelligence Adoption on Economic Growth: A Comparative Panel Analysis of Germany, the Netherlands, Denmark, and the OECD</p>
+  <div class="flags"><div class="flag de"></div><div class="flag nl"></div><div class="flag dk"></div></div>
+  <div class="note">重點不是「AI 有沒有用」，<br>而是「同樣的 AI，為什麼各國效果不同」。</div>
+  <svg class="sticker" style="left:820px;top:96px" width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#f7e19a"/><path d="M38 66 l14 14 30-34" stroke="#3b3226" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <cite>樣式範例｜內容將取自 wiki/research-overview.md</cite>
+</section>
+
+<section class="slide">
+  <div class="tape t3"></div>
+  <span class="hand tag">step 2 →</span>
+  <h2>模型 2：國家交互作用（H2）</h2>
+  <div><div class="formula">Growth<sub>it</sub> = α + β₁AI<sub>it</sub> + <b>β₂(AI × 德國)</b> + <b>β₃(AI × 荷蘭)</b> + <b>β₄(AI × 丹麥)</b> + γX<sub>it</sub> + μ<sub>i</sub> + λ<sub>t</sub> + ε<sub>it</sub></div></div>
+  <div class="cards">
+    <div class="card"><div class="k">β₁</div>其他歐洲 OECD 國家的 AI 效果，也就是「基準」</div>
+    <div class="card"><div class="k">β₁ + β₂</div>德國的 AI 效果；β₂ 是比基準多或少多少</div>
+    <div class="card"><div class="k">Wald 檢定</div>β₂ = β₃ = β₄ = 0？不成立才算有國家差異</div>
+  </div>
+  <svg class="sticker" style="right:120px;bottom:70px" width="140" height="90" viewBox="0 0 140 90"><rect x="6" y="6" width="128" height="78" rx="14" fill="#bfe0d2"/><text x="70" y="55" text-anchor="middle" font-family="LXGW WenKai TC" font-size="26" font-weight="700" fill="#3b3226">本研究延伸</text></svg>
+  <cite>樣式範例｜內容將取自 wiki/research-overview.md、wiki/topics/synthesis/methods-data-structures.md</cite>
+</section>
+<script>function fit(){const s=Math.min(1,(innerWidth-32)/1280);document.querySelectorAll('.slide').forEach(e=>{e.style.transform=`scale(${s})`;e.style.marginBottom=`${720*(s-1)}px`})}addEventListener('resize',fit);fit()</script>
+</body></html>

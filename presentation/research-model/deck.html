@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>研究模型與資料</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<style>
+:root{--paper:#f3efe4;--ink:#1d1b17;--muted:#5f584d;--accent:#9e2a2b;--rule:#1d1b17;--soft:#e8e1d0}
+*{box-sizing:border-box;margin:0}
+body{background:#2b2924;font-family:"Noto Serif TC",serif;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:32px;padding:32px 0}
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:var(--paper);padding:34px 72px 60px;transform-origin:top center;box-shadow:0 18px 40px #0006}
+.mast{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:4px double var(--rule);padding-bottom:6px;font-family:"IBM Plex Mono",monospace;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mast .name{font-family:"Source Serif 4",serif;font-weight:600;font-size:24px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.kicker{margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:17px;letter-spacing:.18em;color:var(--accent)}
+h1{font-family:"Source Serif 4",serif;font-weight:600;font-size:50px;line-height:1.22;margin-top:14px;max-width:1080px}
+h2{font-size:40px;font-weight:900;margin-top:16px;line-height:1.3}
+.lead{font-size:30px;line-height:1.6;margin-top:26px;max-width:1060px}
+.lead b,.hl{color:var(--accent)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:18px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:18px}
+.box{border-top:2px solid var(--rule);padding-top:10px;font-size:24px;line-height:1.55}
+.box h3{font-size:26px;font-weight:900;margin-bottom:4px}
+.box .num{font-family:"Source Serif 4",serif;font-weight:600;font-size:56px;color:var(--accent);line-height:1.1}
+.box .src{font-size:19px;color:var(--muted);line-height:1.45;margin-top:4px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:22px}
+th{font-family:"IBM Plex Mono",monospace;font-size:15px;letter-spacing:.1em;text-align:left;color:var(--muted);border-bottom:1px solid var(--rule);padding:5px 8px}
+td{padding:7px 8px;border-bottom:1px dotted var(--muted);vertical-align:top;line-height:1.4}
+td.k{color:var(--accent);font-weight:700;white-space:nowrap}
+.formula{margin-top:12px;padding:2px 0;border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);font-size:25px;text-align:center}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:16px;letter-spacing:.08em;padding:3px 10px;border:1.5px solid var(--accent);color:var(--accent);border-radius:3px;margin-left:10px;vertical-align:middle;font-weight:500}
+.tag.ok{border-color:var(--ink);color:var(--ink)}
+.todo{color:var(--accent);font-weight:700}
+.note{margin-top:14px;font-size:23px;line-height:1.55;background:var(--soft);padding:10px 18px;border-left:5px solid var(--accent)}
+.stamp{position:absolute;right:80px;top:330px;width:190px;height:190px;border:5px double var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:16px;letter-spacing:.14em;line-height:1.6;transform:rotate(-12deg);opacity:.85}
+.stamp b{display:block;font-family:"Noto Serif TC",serif;font-size:30px;letter-spacing:.05em}
+.foot{position:absolute;left:72px;right:72px;bottom:14px;border-top:1px solid var(--muted);padding-top:5px;font-size:15px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.foot cite{font-style:normal}
+</style></head><body>
+
+<section class="slide">
+  <div class="mast"><span>Vol. 1 · Research design</span><span class="name">The Growth Review</span><span>DE · NL · DK · OECD</span></div>
+  <div class="kicker">研究模型與資料 ／ 論文研究設計</div>
+  <h1>The Impact of Artificial Intelligence Adoption on Economic Growth: A Comparative Panel Analysis of Germany, the Netherlands, Denmark, and the OECD</h1>
+  <p class="lead" style="max-width:860px">這份研究不只問「AI 能不能促進經濟成長」，<br>而是問：<b>AI 的成長效果，是否因國家而不同？</b></p>
+  <div class="stamp"><div>Design<b>暫定版</b>2026</div></div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">出處：wiki/research-overview.md（研究問題）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Motivation</span><span class="name">The Growth Review</span><span>Why these countries</span></div>
+  <h2>為什麼要比較德國、荷蘭、丹麥？</h2>
+  <div class="cols3">
+    <div class="box"><h3>德國</h3><div class="num">27.0%</div>企業使用 AI 的比例（2024）<div class="src">ifo 調查；受訪者自行判斷</div></div>
+    <div class="box"><h3>荷蘭</h3><div class="num">85%</div>企業有使用 AI 的比例（2025）<div class="src">ECB 調查；含試驗性使用</div></div>
+    <div class="box"><h3>丹麥</h3><div class="num">42%</div>企業使用 AI 的比例（2025）<div class="src">Statistics Denmark；10 人以上民間非金融企業</div></div>
+  </div>
+  <div class="note">三個數字來自不同調查、定義不同，<b>不能直接比較</b>；要比較三國，必須用同一份調查的資料。<br>文獻指出 AI 的效果會因國家條件而異：BIS 1321 發現 AI 準備度（國家採用 AI 的條件）較高的國家，AI 暴露度較高的產業成長較快；IMF 的模擬認為歐洲各國差異主要來自 AI 採用率，其次為產業結構。</div>
+  <div class="foot"><cite data-wiki="wiki/topics/countries/germany.md">germany.md</cite><cite data-wiki="wiki/topics/countries/netherlands.md">netherlands.md</cite><cite data-wiki="wiki/topics/countries/denmark.md">denmark.md</cite><cite data-wiki="wiki/sources/bis-gambacorta-et-al-2025.md">BIS 1321</cite><cite data-wiki="wiki/sources/misch-et-al-2025-imf.md">Misch et al.（2025）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Questions</span><span class="name">The Growth Review</span><span>RQ · Hypotheses</span></div>
+  <h2>研究問題與假設 <span class="tag">暫定</span></h2>
+  <table>
+    <tr><th style="width:44%">研究問題</th><th>研究假設</th></tr>
+    <tr><td>RQ1　AI 創新活動是否與經濟成長有正向關係？</td><td><b class="hl">H1</b>　AI 採納（以 AI 創新活動衡量）與經濟成長呈正向關係</td></tr>
+    <tr><td>RQ2　這種關係在德國、荷蘭、丹麥之間是否不同？</td><td><b class="hl">H2</b>　AI 對經濟成長的影響存在跨國差異 <span class="tag">核心</span></td></tr>
+    <tr><td>RQ3　人力資本與產業結構能否解釋這些差異？</td><td><b class="hl">H3</b>　國家條件會調節 AI 對成長的影響<br>H3-A 人力資本　H3-B 產業結構</td></tr>
+  </table>
+  <div class="note">一層接一層：先確認 AI 和成長有沒有關係（H1），再看各國是否不同（H2），最後解釋為什麼不同（H3）。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">出處：wiki/research-overview.md（研究問題、研究假設）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Rationale</span><span class="name">The Growth Review</span><span>Why these hypotheses</span></div>
+  <h2>假設的理論依據 <span class="tag">暫定</span></h2>
+  <div class="cols3">
+    <div class="box"><h3>H1：AI 為什麼可能促進成長</h3>自動化提高生產效率<br>AI 降低部分生產成本<br>AI 促進知識創造與創新</div>
+    <div class="box"><h3>H2：為什麼各國可能不同</h3>各國 AI 發展程度不同<br>各國生產結構不同<br>各國運用 AI 的能力不同</div>
+    <div class="box"><h3>H3：用國家條件解釋差異</h3>H3-A：人力資本的調節效果<br>H3-B：產業結構的調節效果</div>
+  </div>
+  <div class="note">H2 是本研究最核心的假設；H3 用來解釋 H2 若成立，差異從哪裡來。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">出處：wiki/research-overview.md（研究假設）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Data</span><span class="name">The Growth Review</span><span>Variables</span></div>
+  <h2>要用哪些資料？</h2>
+  <table style="font-size:20px">
+    <tr><th>角色</th><th>變數</th><th>來源</th><th>狀態</th></tr>
+    <tr><td class="k">依變數</td><td>人均實質 GDP 成長率（每年相較前一年的百分比變化）</td><td>使用者整理的試算表</td><td class="todo">原始來源待確認</td></tr>
+    <tr><td class="k">主要 AI 指標</td><td>AI 專利，依申請人所在國，分數計數，1985–2024</td><td>OECD Patents 資料庫</td><td class="todo">連結待確認</td></tr>
+    <tr><td class="k">穩健性</td><td>AI 專利，依發明人所在國；AI 學術論文，2000–2025</td><td>OECD；OECD.AI</td><td>暫定</td></tr>
+    <tr><td class="k">待確認</td><td>OECD.AI 的 AI 專利資料，1995–2024</td><td>OECD.AI</td><td class="todo">是否與上列重複</td></tr>
+    <tr><td class="k">H3-A 調節</td><td>25–64 歲人口高等教育比例</td><td>Eurostat edat_lfse_03</td><td>暫定</td></tr>
+    <tr><td class="k">H3-B 調節</td><td>製造業占總附加價值比例</td><td>Eurostat nama_10_a10</td><td>暫定</td></tr>
+    <tr><td class="k">控制變數</td><td>固定資本形成毛額（% of GDP）</td><td>World Bank</td><td>暫定</td></tr>
+    <tr><td class="k">標準化</td><td>就業人口</td><td>—</td><td class="todo">來源待確認</td></tr>
+  </table>
+  <div class="note" style="font-size:19px;padding:6px 14px">分數計數：一件專利若有多國申請人或發明人，按比例分給各國，避免每國都算一整件。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">出處：wiki/research-overview.md（資料與資料來源）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Sample</span><span class="name">The Growth Review</span><span>Benchmark</span></div>
+  <h2>樣本：OECD 是「基準」，不是第四個國家</h2>
+  <div class="cols">
+    <div class="box"><h3>樣本設計 <span class="tag">暫定</span></h3>歐洲的 OECD 國家年度面板，每個國家每年一筆。<br>德國、荷蘭、丹麥是重點比較國家，其他歐洲 OECD 國家作為<b class="hl">基準</b>。</div>
+    <div class="box"><h3>為什麼要多國資料</h3>文獻中多數國家層級方法（GMM、PMG、產業暴露度交互作用）依賴很多國家才能估計；國家數少時，固定效果會吸收大部分變異。</div>
+  </div>
+  <div class="note">研究期間：暫定 2014–2024，<b>待確認</b>，最後依所有變數共同可取得的年份決定。<br>近年專利資料可能還不完整：Parteka & Kordalska 依 OECD 作法把專利截至 2016 年。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">wiki/research-overview.md（樣本與期間）</cite><cite data-wiki="wiki/topics/synthesis/methods-data-structures.md">方法與資料結構比較</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Measurement</span><span class="name">The Growth Review</span><span>AI indicators</span></div>
+  <h2>AI 要怎麼量？</h2>
+  <div class="cols3">
+    <div class="box"><h3>主要指標</h3>AI 專利<br>依專利<b class="hl">申請人</b>所在國歸屬</div>
+    <div class="box"><h3>穩健性指標</h3>AI 專利<br>依專利<b class="hl">發明人</b>所在國歸屬</div>
+    <div class="box"><h3>穩健性指標</h3>AI 學術論文<br>依作者機構所在國歸屬</div>
+  </div>
+  <div class="note"><b>注意：</b>專利與論文衡量的是「AI 創新活動」，<b>不等於企業實際採用 AI 的比例</b>。題目用 Adoption，論文中需說明這是代理指標。<br>換指標，結果可能不同：Duarte et al. 專利顯著、論文不顯著；Parteka & Kordalska 正好相反。所以要做穩健性檢驗。</div>
+  <div class="foot"><cite data-wiki="wiki/topics/synthesis/ai-measures.md">AI 指標比較</cite><cite data-wiki="wiki/sources/duarte-freitas-simoes-2026.md">Duarte et al.（2026）</cite><cite data-wiki="wiki/sources/parteka-kordalska-2023.md">Parteka & Kordalska（2023）</cite><cite data-wiki="wiki/research-overview.md">research-overview.md</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Model 1</span><span class="name">The Growth Review</span><span>Hypothesis H1</span></div>
+  <h2>Model 1（H1）：AI 和經濟成長有關嗎？<span class="tag">暫定</span></h2>
+  <div class="formula">$$\mathit{Growth}_{it}=\alpha+{\color{#9e2a2b}\beta_1}\,AI_{it}+\gamma' X_{it}+\mu_i+\lambda_t+\varepsilon_{it}$$</div>
+  <table>
+    <tr><th style="width:190px">符號</th><th>白話意思</th></tr>
+    <tr><td class="k">\(\mathit{Growth}_{it}\)</td><td>國家 i 在第 t 年的人均實質 GDP 成長率</td></tr>
+    <tr><td class="k">\(AI_{it}\)</td><td>AI 專利（申請人），每百萬就業人口</td></tr>
+    <tr><td class="k">\(X_{it},\ \gamma'\)</td><td>控制變數（如固定資本形成）與它們的係數</td></tr>
+    <tr><td class="k">\(\mu_i,\ \lambda_t\)</td><td>國家固定效果、年份固定效果</td></tr>
+    <tr><td class="k">\(\alpha,\ \varepsilon_{it}\)</td><td>常數項、模型解釋不到的誤差</td></tr>
+    <tr><td class="k">\(\beta_1\)</td><td><b>要看的係數</b>：顯著為正，就支持 H1</td></tr>
+  </table>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">出處：wiki/research-overview.md（研究模型 Model 1）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Model 2</span><span class="name">The Growth Review</span><span>Hypothesis H2</span></div>
+  <h2>Model 2（H2）：各國的 AI 效果一樣嗎？<span class="tag">暫定</span><span class="tag">本研究延伸</span></h2>
+  <div class="formula">$$\begin{aligned}\mathit{Growth}_{it}=\ &\alpha+\beta_1 AI_{it}+{\color{#9e2a2b}\beta_2}(AI_{it}\times DE_i)+{\color{#9e2a2b}\beta_3}(AI_{it}\times NL_i)\\&+{\color{#9e2a2b}\beta_4}(AI_{it}\times DK_i)+\gamma' X_{it}+\mu_i+\lambda_t+\varepsilon_{it}\end{aligned}$$</div>
+  <table>
+    <tr><th style="width:200px">符號</th><th>白話意思</th></tr>
+    <tr><td class="k">\(\beta_1\)</td><td>這裡變成「其他歐洲 OECD 國家」的 AI 效果，也就是基準</td></tr>
+    <tr><td class="k">\(\beta_1+\beta_2\)</td><td>德國的 AI 效果；荷蘭是 \(\beta_1+\beta_3\)，丹麥是 \(\beta_1+\beta_4\)</td></tr>
+    <tr><td class="k">\(DE_i, NL_i, DK_i\)</td><td>國家虛擬變數（是該國 = 1）；其餘符號同 Model 1</td></tr>
+    <tr><td class="k">Wald 檢定 1</td><td>檢驗 \(\beta_2=\beta_3=\beta_4=0\)；被拒絕，代表<b>至少有一國</b>的 AI 效果和基準不同</td></tr>
+    <tr><td class="k">Wald 檢定 2</td><td>檢驗 \(\beta_2=\beta_3=\beta_4\)；被拒絕，代表<b>三國之間</b>的 AI 效果不全相同</td></tr>
+  </table>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">wiki/research-overview.md（研究模型 Model 2）</cite><cite data-wiki="wiki/topics/synthesis/methods-data-structures.md">方法與資料結構比較</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Model 3</span><span class="name">The Growth Review</span><span>Hypothesis H3</span></div>
+  <h2>Model 3（H3）：國家條件會放大或縮小 AI 效果嗎？<span class="tag">暫定</span></h2>
+  <div class="formula">$$\mathit{Growth}_{it}=\alpha+\beta_1 AI_{it}+\beta_2 Z_{it}+{\color{#9e2a2b}\beta_3}(AI_{it}\times Z_{it})+\gamma' X_{it}+\mu_i+\lambda_t+\varepsilon_{it}$$</div>
+  <table>
+    <tr><th style="width:190px">符號</th><th>白話意思</th></tr>
+    <tr><td class="k">\(Z_{it}\)</td><td>國家條件：3-A 用高等教育比例（人力資本），3-B 用製造業占比（產業結構），兩個模型分開估計</td></tr>
+    <tr><td class="k">\(\beta_2\)</td><td>國家條件本身與成長的關係</td></tr>
+    <tr><td class="k">\(\beta_3\)</td><td>為正：條件越高，AI 和成長的關係越強；為負：越弱</td></tr>
+  </table>
+  <div style="font-size:18px;color:var(--muted);margin-top:6px">其餘符號同 Model 1；各模型的 β 係數各自獨立，這裡的 \(\beta_2,\beta_3\) 與 Model 2 不同。</div>
+  <div class="note">文獻提醒：Duarte et al. 做過 AI × 人力資本（用 PWT 人力資本指數），12 個交互項中 9 個不顯著。所以 H3 是待檢驗的問題，不是已知會成立的結果。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">wiki/research-overview.md（Model 3-A、3-B）</cite><cite data-wiki="wiki/sources/duarte-freitas-simoes-2026.md">Duarte et al.（2026）</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Literature</span><span class="name">The Growth Review</span><span>Precedents</span></div>
+  <h2>為什麼這樣設計？文獻先例對照</h2>
+  <table>
+    <tr><th style="width:30%">設計選擇</th><th style="width:16%">文獻先例</th><th>說明</th></tr>
+    <tr><td>國家面板 + AI 專利 + 經濟成長</td><td><span class="tag ok" style="margin:0">有先例</span></td><td>Duarte et al.：OECD 國家 1995–2017（Panel ARDL、GMM）<br>Kalai et al.（PMG-ARDL）：30 個歐洲國家（含德荷丹）2000–2021，AI 專利長期係數 0.217</td></tr>
+    <tr><td>雙向固定效果（Model 1）</td><td><span class="tag ok" style="margin:0">有先例</span></td><td>Parteka & Kordalska：國家 + 年份固定效果，AI 專利／出版物對生產力成長</td></tr>
+    <tr><td>AI 專利、論文指標的建構</td><td><span class="tag ok" style="margin:0">有先例</span></td><td>Parteka & Kordalska：申請人／發明人歸屬、分數計數，並公開資料包</td></tr>
+    <tr><td>AI × 人力資本</td><td><span class="tag ok" style="margin:0">有先例</span></td><td>Duarte et al.，交互項多不顯著</td></tr>
+    <tr><td>研究國家異質性的動機</td><td><span class="tag ok" style="margin:0">有先例</span></td><td>BIS 1321（國家－產業資料）；Misch et al.（模擬，非實證）</td></tr>
+    <tr><td>AI × 個別國家（Model 2）</td><td><span class="tag" style="margin:0">本研究延伸</span></td><td>wiki 中沒有相同設計；相近做法為 BIS 1321 的國家 AI 準備度 × 產業暴露度</td></tr>
+  </table>
+  <div class="foot"><cite data-wiki="wiki/sources/duarte-freitas-simoes-2026.md">Duarte</cite><cite data-wiki="wiki/sources/kalai-becha-helali-2024.md">Kalai</cite><cite data-wiki="wiki/sources/parteka-kordalska-2023.md">Parteka</cite><cite data-wiki="wiki/sources/bis-gambacorta-et-al-2025.md">BIS 1321</cite><cite data-wiki="wiki/sources/misch-et-al-2025-imf.md">Misch</cite><cite data-wiki="wiki/research-overview.md">research-overview.md</cite></div>
+</section>
+
+<section class="slide">
+  <div class="mast"><span>Next steps</span><span class="name">The Growth Review</span><span>Robustness · Limits</span></div>
+  <h2>穩健性、待確認事項與研究限制</h2>
+  <div class="cols3">
+    <div class="box" style="font-size:21px"><h3>穩健性檢驗</h3>改用發明人專利<br>改用 AI 學術論文<br>改用專利存量<br>改用落後一期 AI 指標</div>
+    <div class="box" style="font-size:21px"><h3>待確認</h3>歐洲 OECD 國家名單、研究期間<br>GDP 原始來源、申請人專利連結<br>是否加入貿易開放度、通膨、人口成長、一般創新</div>
+    <div class="box" style="font-size:21px"><h3>研究限制</h3>專利、論文 ≠ 企業採用率<br>高等教育比例只是代理指標<br>固定資本形成可能有內生性<br>期間短、交互項多，估計可能不穩定<br>結果是相關，不是因果</div>
+  </div>
+  <div class="note">研究結果：文獻發現已整理在 wiki 綜合頁；<b>本研究實證結果待實際估計後更新</b>。</div>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">wiki/research-overview.md（研究模型、研究結果、研究限制）</cite><cite data-wiki="wiki/topics/synthesis/ai-measures.md">AI 指標比較</cite></div>
+</section>
+
+<script>function fit(){const s=Math.min(1,(innerWidth-32)/1280);document.querySelectorAll('.slide').forEach(e=>{e.style.transform=`scale(${s})`;e.style.marginBottom=`${720*(s-1)}px`})}addEventListener('resize',fit);fit()</script>
+</body></html>

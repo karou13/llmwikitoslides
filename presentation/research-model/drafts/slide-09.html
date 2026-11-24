@@ -1,0 +1,14 @@
+<section class="slide">
+  <div class="mast"><span>Model 2</span><span class="name">The Growth Review</span><span>Hypothesis H2</span></div>
+  <h2>Model 2（H2）：各國的 AI 效果一樣嗎？<span class="tag">暫定</span><span class="tag">本研究延伸</span></h2>
+  <div class="formula">$$\begin{aligned}\mathit{Growth}_{it}=\ &\alpha+\beta_1 AI_{it}+{\color{#9e2a2b}\beta_2}(AI_{it}\times DE_i)+{\color{#9e2a2b}\beta_3}(AI_{it}\times NL_i)\\&+{\color{#9e2a2b}\beta_4}(AI_{it}\times DK_i)+\gamma' X_{it}+\mu_i+\lambda_t+\varepsilon_{it}\end{aligned}$$</div>
+  <table>
+    <tr><th style="width:200px">符號</th><th>白話意思</th></tr>
+    <tr><td class="k">\(\beta_1\)</td><td>這裡變成「其他歐洲 OECD 國家」的 AI 效果，也就是基準</td></tr>
+    <tr><td class="k">\(\beta_1+\beta_2\)</td><td>德國的 AI 效果；荷蘭是 \(\beta_1+\beta_3\)，丹麥是 \(\beta_1+\beta_4\)</td></tr>
+    <tr><td class="k">\(DE_i, NL_i, DK_i\)</td><td>國家虛擬變數（是該國 = 1）；其餘符號同 Model 1</td></tr>
+    <tr><td class="k">Wald 檢定 1</td><td>檢驗 \(\beta_2=\beta_3=\beta_4=0\)；被拒絕，代表<b>至少有一國</b>的 AI 效果和基準不同</td></tr>
+    <tr><td class="k">Wald 檢定 2</td><td>檢驗 \(\beta_2=\beta_3=\beta_4\)；被拒絕，代表<b>三國之間</b>的 AI 效果不全相同</td></tr>
+  </table>
+  <div class="foot"><cite data-wiki="wiki/research-overview.md">wiki/research-overview.md（研究模型 Model 2）</cite><cite data-wiki="wiki/topics/synthesis/methods-data-structures.md">方法與資料結構比較</cite></div>
+</section>
